@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<div style="display: flex; flex-direction: row; gap: 100px; align-content: center;">
+    <div>
+        <div><h3 style="font-weight: bolder; font-size: 20px; color: blue; font-family: Arial, Helvetica, sans-serif;">Odds Numbers from 1-100</h3></div>
+        <div id="Odds"></div>
+    </div>
+
+    <div>
+        <div><h3 style="font-weight: bolder; font-size: 20px; color: blue; font-family: Arial, Helvetica, sans-serif;">Even Numbers from 1-100</h3></div>
+        <div id="Even"></div>
+    </div>
+
+    <div>
+        <div style="align-content: center;"><h3 style="font-weight: bolder; font-size: 40px; position: relative; right: -50px; top: -30px; color: blue; font-family: Arial, Helvetica, sans-serif;">FIZZ BOZZ</h3></div>
+        <div style="color: red; margin-left:70px;  position:relative; top: -50px ; " id="FizzBozz"></div>
+    </div>
+
+    <div>
+        <div><h3 style="font-weight: bolder; font-size: 20px; color: blue; font-family: Arial, Helvetica, sans-serif;">Prime Numbers from 1-100</h3></div>
+        <div id="primenum"></div>
+    </div>
+</div>
+
+    <script>
+        for(i=1; i<=100; i++){
+          if(i%2 ==1)
+          Odds.innerHTML += `<P style="color:red; margin-left:120px; position:relative; top:10px; font-weight:bold; ">${i}</P>`
+
+          else if(i%2 ==0)
+          Even.innerHTML += `<P style="color:red; margin-left:120px; position:relative; top:10px; font-weight:bold;">${i}</P>`
+        }
+        
+        for(i=1; i<=100; i++){
+            if(i%3==0 && i%5!==0)
+            FizzBozz.innerHTML += `<P>${i} is divisible by 3 <b>FIZZ</b></P>`
+            else if(i%5==0 && i%3!==0)
+            FizzBozz.innerHTML += `<P style="color:green;">${i} is divisible by 5 <b>BUZZ</b></P>`
+            else if(i%5==0 && i%3==0)
+            FizzBozz.innerHTML += `<P style="color:purple;">${i} is divisible by 3 & 5 <b>FIZZ BUZZ</b></P>`
+        } 
+
+        for(i=1; i<=100; i++){
+            var prime = true;
+            for(j=2; j<i; j++)
+            {
+                if(i%j==0){
+                    prime = false;
+                    break;
+                }
+            }
+            if(prime){
+                primenum.innerHTML += `<p style="color:red; margin-left:120px; font-weight:bold;">${i}</p>`
+            }
+        }
+      
+    </script>
+
+</body>
+
+</html>
